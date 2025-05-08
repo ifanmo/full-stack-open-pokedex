@@ -4,15 +4,15 @@ import js from '@eslint/js'
 export default [
   js.configs.recommended,
   {
-    files: ['**/*.js'],
+    files: ['./**/*.{js,jsx}'],
     languageOptions: {
-      sourceType: 'commonjs',
+      sourceType: 'module',
       globals: { ...globals.node },
       ecmaVersion: 'latest',
     },
     
   },
   {
-    ignores: ['dist/**'],
+    ignores: ['dist/**', 'webpack.config.js'],
   },
 ]
