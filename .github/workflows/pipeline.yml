@@ -37,7 +37,7 @@ jobs:
     # Trigger deployment only on push on main, and also when #skip is not present in commit message
     if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ', '), '#skip') }}
     needs: [build_and_test_app]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -51,7 +51,7 @@ jobs:
   
   tag_release:
     needs: [trigger_deployment]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         with:
