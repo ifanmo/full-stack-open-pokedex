@@ -16,5 +16,4 @@ describe('Pokedex', () => {
         await expect(page.getByText('overgrow')).toBeVisible()
     })
 
-  
 })
